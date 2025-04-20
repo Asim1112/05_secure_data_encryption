@@ -97,7 +97,7 @@ elif choice == "Retrieve Data":
 
                         if st.session_state.failed_attempts >= 3:
                             st.warning("🔒 Too many attempts. Redirecting to Login.")
-                            st.experimental_rerun()
+                            st.rerun()
                 else:
                     st.error("⚠️ No data found for this key.")
             else:
@@ -111,7 +111,7 @@ elif choice == "Login":
         if login_pass == "admin123":
             st.session_state.failed_attempts = 0
             st.success("✅ Reauthorized! Redirecting to Retrieve Data...")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("❌ Incorrect admin password.")
 
